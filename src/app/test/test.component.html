@@ -1,0 +1,43 @@
+<p>test works!</p>
+
+<!-- Property Binding -->
+<!-- []  --> <!-- {{ }} text  --> 
+<!-- disabled = true -->
+<h4>Property Binding</h4>
+<button (click)="isEnabled()">Enable Input</button>
+<input type="text" [disabled]="isDisabled" [id]="anID">
+
+<hr>
+
+<h4>Class Binding</h4>
+<!-- [] -->
+<!-- Single Class -->
+<h4 [class.]="successClass">BSIT 3B</h4>
+<h4 [class.c-danger]="hasSuccess">BSIT 3B</h4>
+
+<!-- Multiple Classes -->
+<!-- [ngClass] -->
+<!-- <h4 [ngClass]="{'c-success' : isSet, 'fontI': isSet}"> BSIT 3B - ELEC 3</h4> -->
+
+<h4 [ngClass]="multipleClasses"> BSIT 3B - ELEC 3</h4>
+<hr>
+
+<h4>Event Binding</h4>
+<!-- () -->
+<button 
+    (click)="toggleMode()"
+    [ngClass]="{'toggle-success' : toggle, 'toggle-error' : !toggle}"
+>
+   {{status}}
+</button>
+
+<hr>
+
+<h4>Two Way Binding</h4>
+<!-- [()] --> <!-- Add FormsModule in app ts -->
+<input type="text" [(ngModel)]="setValue" >
+<br>
+<textarea name="" id="" cols="30" rows="10">{{ setValue }}</textarea>
+
+
+

@@ -1,0 +1,101 @@
+<!-- Template Reference Variable-->
+<!-- 
+    1. create an input
+    2. fire an event
+    3. display the ouptu
+ -->
+<!-- # -->
+ <input #myInput type="text">
+ <button (click)="logMessage(myInput)"> Message</button>
+ {{ myInput.value }}
+
+<!-- STRUCTURAL DIRECTIVES -->
+<!-- IF -->
+<!-- 
+// other prog lang
+    if(){
+
+    } else if {
+
+    } else {
+
+    }
+
+// angular
+    if else
+
+    if
+    > per block
+    if
+    >
+    if
+
+    switch
+ -->
+
+ <!-- If Block; Else Block; -->
+ <!-- <h2 *ngIf="displaySection; else elseBlock">
+    BSIT 3B 
+ </h2> -->
+<!-- ? : -->
+                        <!-- ?     true -->   <!-- : false -->
+ <div *ngIf="displaySection;then thenBlock; else elseBlock"></div>
+
+<!-- If block -->
+<ng-template #thenBlock>
+    <h2>
+       BSIT 3B
+    </h2>
+</ng-template>
+
+ <!-- Else block -->
+<ng-template #elseBlock>
+    <h2>
+       NO RECORD FOUND
+    </h2>
+</ng-template>
+
+<hr>
+
+<!-- SWITCH -->
+<h4>SWITCH CASE</h4>
+<!-- [ngSwitch] -->
+<div [ngSwitch]="color"> <!-- red / true-->
+
+    <div *ngSwitchCase="'red'"> This red</div>
+    <div *ngSwitchCase="'blue'"> This is blue</div>
+    <div *ngSwitchCase="'green'"> This is green</div>
+    <div *ngSwitchDefault> No color found</div>
+
+</div>
+
+<hr>
+<!-- 
+
+grade 75 - 85 - Average
+grade 86 - 95 - Excellent
+grade 96 - 100 - Superior
+grade 101 - Invalid
+grade 74 - Failed
+
+ -->
+
+ <div [ngSwitch]="true"> <!-- red / true-->
+
+    <div *ngSwitchCase="grade >= 75 && grade <= 85"> Average</div>
+    <div *ngSwitchCase="grade >= 86 && grade <= 95"> Excellent</div>
+    <div *ngSwitchCase="grade >= 96 && grade <= 100"> Superior</div>
+    <div *ngSwitchCase="grade >= 101"> Invalid</div>
+    <div *ngSwitchDefault> Failed</div>
+
+</div>
+
+<hr>
+<h3>ngFor</h3>
+
+<div *ngFor="let stat of status; index as i; last as b">
+    <h4>{{ b }} {{ i }} {{ stat  }}</h4>
+</div>
+
+
+
